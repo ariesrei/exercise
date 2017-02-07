@@ -1,0 +1,18 @@
+<form class="loginForm" ng-submit="test.Authenticate()" ng-hide="test.hideLoginForm">
+	<h2>Login</h2>
+	<table>
+	<tr>
+		<td>Username:</td>
+		<td><input type="text" placeholder="Username" ng-model="test.username"/></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><input type="password" placeholder="Password" ng-model="test.password"/></td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td><button class="btn btn-login">Login</button></td>
+	</tr>
+	</table>
+	{{ test.error }}
+</form> 

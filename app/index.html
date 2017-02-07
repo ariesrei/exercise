@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    
+<html ng-app="app">
+<head>
+	<title>AngularJS Exercise</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	
+</head>
+
+<body>
+	<div class="container">
+	 	
+		<div ng-controller="myCtrl as test" >
+
+		 	<header>
+		 		<h1>Exercise: Test</h1>
+		 		<span class="pull-right" ng-hide="test.loginActive">Welcome Guest</span>	
+	 			<button class="btn btn-logout pull-right" 
+	 				ng-hide="test.logoutActive" 
+	 				ng-click="test.Logout()">
+	 			Logout
+	 			</button>
+		 	</header>
+
+		 	<main>
+
+		 		<div class="content"  >
+
+		 			<div login-test=""></div>
+
+			 		<div ng-hide="test.ticketActive">
+
+				 		<table>
+					 		<thead>
+						 		<tr>
+							 		<td>Title</td>
+							 		<td>Description</td>
+							 		<td>Status</td>
+						 		</tr>
+					 		</thead>
+				 		</table>
+
+			 		</div>
+
+		 		</div>
+		 
+		 	</main>
+
+	 	</div>
+
+	 	<footer>
+	 		
+	 	</footer>
+
+	 	
+
+	 </div>
+
+	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/controller/authenticate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/factory/factory.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/directive/directive.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
