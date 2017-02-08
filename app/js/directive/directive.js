@@ -5,7 +5,8 @@
 
 	angular
 		.module("app")
-		.directive("loginTest", loginFormDirective);
+		.directive("loginForm", loginFormDirective)
+		.directive("ticketApp", Main);
 
 
 	function loginFormDirective(){
@@ -17,6 +18,14 @@
 
 	}
 
+
+	function Main() {
+
+		return {
+			restrict: 'A',
+			templateUrl: '../../templates/main.html'
+		};
+	}
 
 
 })();

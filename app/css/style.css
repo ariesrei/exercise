@@ -64,6 +64,7 @@ footer {
 	background-color: #dddddd;
 	margin: 0 auto;
 	line-height:30px;
+	border: 1px #aaa solid;
 }
 
 .loginForm table {
@@ -72,10 +73,9 @@ footer {
 
 .loginForm input {
 	padding: 5px;
-	width: 100%;
-	border: 1px #ddd solid;
-	border-radius: 10px;
- 
+	width: 95%;
+	border: 1px #aaa solid;
+	border-radius: 5px;
 }
 
 .btn {
@@ -115,7 +115,25 @@ table {
 	border: 1px #ddd solid;
 }
 
+table td {
+	padding: 5px;
+}
+
 thead {
 	font-weight: bold;
 
+}
+
+.error {
+	border: 1px red solid;
+	font-size: 12px;
+	padding: 0 10px;
+	color: red;
+}
+
+.box-5 {
+	float:left;
+	width: 19%;
+	margin: 0 2px; 
+	border: 1px #ddd solid;
 }

@@ -23,14 +23,12 @@
 		vm.Authenticate = Authenticate;
 
 		vm.Logout = Logout;
+		vm.hideError = true;
 
+ 
 
-		function Logout(){
-			vm.loginActive = false;
-		 	vm.logoutActive = true;
-		 	vm.hideLoginForm = false;
-		 	vm.ticketActive = true;
-		
+		function DragAndDrop(){
+
 		}
 
 		function Authenticate(){
@@ -50,10 +48,22 @@
 				//vm.transitionTo('home');
 			} 
 			else {
-				vm.error = "Incorrect username/password !";
+				vm.hideError = false;
+				vm.error = "Incorrect username/password!";
+
 			} 
 
 		}
+
+		function Logout(){
+			vm.loginActive = false;
+		 	vm.logoutActive = true;
+		 	vm.hideLoginForm = false;
+		 	vm.ticketActive = true;
+			vm.hideError = true;
+
+		}
+
 
 	}
 
