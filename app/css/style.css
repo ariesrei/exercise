@@ -84,13 +84,23 @@ footer {
 }
 
 .btn-login {
-	background-color:#bc880e;
+	background-color:#0D70A5;
 	border-radius: 10px;
 	font-weight: bold;
-	font-size: 14px;
-	border: 1px #bc880e solid;
+	font-size: 12px;
+	border: 1px #0C78B2 solid;
 	color: #dddddd;
-	box-shadow: inset 0 10px 10px #f3b600;
+	box-shadow: inset 0 10px 10px #0F92D8;
+}
+
+.btn-new {
+	background-color:#35A06A;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 12px;
+	border: 1px #38AA71 solid;
+	color: #eeeeee;
+	box-shadow: inset 0 10px 10px #3AB779;
 }
 
 .btn-logout {
@@ -105,8 +115,9 @@ footer {
 
 .pull-right {
 	position: absolute;
+	top: 20px;
 	right: 10px;
-
+	white-space: nowrap;
 }
 
 table {
@@ -117,6 +128,7 @@ table {
 
 table td {
 	padding: 5px;
+	vertical-align: top;
 }
 
 thead {
@@ -136,4 +148,25 @@ thead {
 	width: 19%;
 	margin: 0 2px; 
 	border: 1px #ddd solid;
+	text-align: center;
 }
+
+.box-5 strong {
+	color: white;
+	background-color: #203021;
+	line-height: 30px;
+	display: block;
+}
+
+.main-ticket {
+	font-size: 12px;
+}
+
+.draggable {
+	width: 200px;
+	border: 1px #ddd solid;
+	padding: 2px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+

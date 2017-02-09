@@ -1,13 +1,13 @@
-<form class="loginForm" ng-submit="test.Authenticate()" ng-hide="test.hideLoginForm">
+<form class="loginForm" ng-submit="formCtrl.Authenticate()" ng-hide="formCtrl.LoginService.loginActive">
 	<h2>Login</h2>
 	<table>
 	<tr>
 		<td>Username:</td>
-		<td><input type="text" placeholder="Username" ng-model="test.username"/></td>
+		<td><input type="text" placeholder="Username" ng-model="formCtrl.username"/></td>
 	</tr>
 	<tr>
 		<td>Password:</td>
-		<td><input type="password" placeholder="Password" ng-model="test.password"/></td>
+		<td><input type="password" placeholder="Password" ng-model="formCtrl.password"/></td>
 	</tr>
 	<tr>
 		<td> </td>
@@ -16,6 +16,6 @@
 	</table>
 	
 
-	<div class="error" ng-hide="test.hideError"> {{ test.error }} </div>
+	<div class="error" ng-hide="formCtrl.LoginService.hideError"> {{ formCtrl.error }} </div>
 
 </form> 

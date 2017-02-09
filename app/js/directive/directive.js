@@ -6,7 +6,8 @@
 	angular
 		.module("app")
 		.directive("loginForm", loginFormDirective)
-		.directive("ticketApp", Main);
+		.directive("ticketApp", Main)
+		.directive("createTicketForm", createTicketForm);
 
 
 	function loginFormDirective(){
@@ -27,5 +28,11 @@
 		};
 	}
 
+	function createTicketForm() {
+		return {
+			restrict: 'A',
+			templateUrl: '../../templates/createTicketForm.html'
+		};
+	}
 
 })();
