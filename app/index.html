@@ -49,13 +49,23 @@
 			 					</tr>
 				 				<tr>
 					 				<td style="width: 15%">
-						 				<div ng-repeat="testdata in ticketCtrl.dataService.sampleData" >
-							 				<div style="width: 200px;" class="draggable">
+
+						 				<div ng-repeat="testdata in ticketCtrl.dataService.sampleData" ondrop="drop(event)" ondragover="allowDrop(event)">
+							 				
+							 				<div id="{{ testdata.id }}" class="draggable" 
+							 				 	ondragstart="dragStart(event)" draggable="true" >  
 							 					<strong>{{ testdata.title }}</strong>
 							 					<p>{{ testdata.description }}</p>
 							 					<p>{{ testdata.status }}</p>
 							 				</div> 
+
+							 				
+  											<!-- <p ondragstart="dragStart(event)" draggable="true" id="dragtarget">Drag me!</p> -->
+  
 							 			</div>
+
+							 			<p id="demo"></p>
+
 
 					 				</td>
 

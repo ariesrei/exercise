@@ -29,6 +29,7 @@
 	}
 
 	function createTicketForm() {
+		
 		return {
 			restrict: 'A',
 			templateUrl: '../../templates/createTicketForm.html'

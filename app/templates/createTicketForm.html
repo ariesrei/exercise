@@ -1,18 +1,18 @@
-<form class="" ng-submit="ticketCtrl.CreateTicket()" ng-hide="false">
+<form class="createForm" ng-submit="ticketCtrl.createTicket()"  >
  
 
 	<table>
 	<tr>
-		<td>Title:</td>
-		<td><input type="text" placeholder="Title" ng-model="ticketCtrl.title"/></td>
+		<td style="width: 15%">Title:</td>
+		<td style="width: 85%"><input type="text" placeholder="Title" ng-model="ticketCtrl.title"/></td>
 	</tr>
 	<tr>
 		<td>Description:</td>
-		<td><input type="text" placeholder="Description" ng-model="ticketCtrl.description"/></td>
+		<td><input type="text" placeholder="Description" ng-model="ticketCtrl.description" /></td>
 	</tr>
 	<tr>
 		<td> </td>
-		<td><button class="btn btn-create">Create</button></td>
+		<td><button class="btn btn-create" type="submit">Create</button></td>
 	</tr>
 	</table>
 

@@ -9,30 +9,33 @@
 	function TicketController(DataService, TicketService){
 		
 		var vm = this;
-
-		// vm.planned = planned;
-		// vm.workingon = workingon;
-		// vm.resolved = resolved;
-		// vm.qatested = qatested;
-		// vm.completed = completed;
-
 		vm.TicketService = TicketService;
-
 		vm.dataService = DataService;
+
 		vm.create = Create;
 		vm.createTicket = CreateTicket;
+
+		vm.title = '';
+		vm.description = '';
 
 		function Create(){
 			alert("ASDASD");
 		}
-			
+		
 		function CreateTicket(){
 
+			if(vm.title !== '' && vm.description !== ''){
+				DataService.addTicket(vm.title, vm.description);
+				vm.title = '';
+				vm.description = '';
+			}
+ 
+			else {
+				alert('Please fill the fields');
+			}
+			
 		}
 	 
-		//vm.list1 = {title: 'AngularJS - Drag Me'};
-		//vm.list2 = {};
-
  
 	}
 

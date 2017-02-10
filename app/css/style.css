@@ -149,9 +149,10 @@ thead {
 	margin: 0 2px; 
 	border: 1px #ddd solid;
 	text-align: center;
+	min-height:200px;
 }
 
-.box-5 strong {
+.box-5 h4 {
 	color: white;
 	background-color: #203021;
 	line-height: 30px;
@@ -163,10 +164,19 @@ thead {
 }
 
 .draggable {
-	width: 200px;
+	width: 100%;
 	border: 1px #ddd solid;
-	padding: 2px;
+	padding: 0px;
 	border-radius: 5px;
 	margin-bottom: 5px;
+	text-align:left;
 }
 
+.createForm {
+	line-height:22px;
+}
+
+.createForm input{
+	padding: 5px;
+	border: 1px #ddd solid;
+}
