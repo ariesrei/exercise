@@ -5,34 +5,51 @@
 
 </div> -->
 
+<p id="demo"></p>
 
-<div class="box-5" ondrop="drop(event)" ondragover="allowDrop(event)" id="planned" >
+
+<div class="box-5"  id="planned" my-drop="" drop="ticketCtrl.onDrop(task)">
+
 	<h4>Planned</h4>
 
+	<div ticket-template="" 
+		ng-repeat="testdata in ticketCtrl.dataService.sampleData | filter: { status: 'planned' }" 
+		ondragover="allowDrop(event)" >
+	
+	</div>
+
+	
+</div>
+
+
+
+<div class="box-5"  id="working"  my-drop="" drop="ticketCtrl.onDrop(task)">
+	<h4>Working On</h4>
+
+	<div ticket-template="" 
+		ng-repeat="testdata in ticketCtrl.dataService.sampleData | filter: { status: 'working' } " 
+		  ondragover="allowDrop(event)"  >
+
+	</div>
 
 </div>
 
 
-<!-- 
-<div class="box-5">
-	<strong>Working On</strong>
 
- 
-	<div data-drag="true" ng-model="test.list1" jqyoui-draggable="{animate:true}" >{{ test.list1.title }} </div>
- 
+<div class="box-5" ondrop="drop(event)" ondragover="allowDrop(event)" id="resolved">
+	<h4>Resolved</h4>
+
 
 </div>
 
-<div class="box-5">
-	<strong>Resolved</strong>
+<div class="box-5" ondrop="drop(event)" ondragover="allowDrop(event)" id="tested">
+	<h4>QA Tested</h4>
+
+
 </div>
 
-<div class="box-5">
-	<strong>QA Tested</strong>
-</div>
+<div class="box-5" ondrop="drop(event)" ondragover="allowDrop(event)" id="completed"> 
+	<h4>Completed </h4>
 
-<div class="box-5">
-	<strong>Completed </strong>
+
 </div>
- -->
- 

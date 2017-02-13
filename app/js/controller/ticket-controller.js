@@ -18,6 +18,11 @@
 		vm.title = '';
 		vm.description = '';
 
+		vm.drop = drop;
+		vm.dragStart = dragStart;
+
+		vm.test = test;
+
 		function Create(){
 			alert("ASDASD");
 		}
@@ -35,7 +40,33 @@
 			}
 			
 		}
-	 
+
+		function test(){
+			alert("asdas");
+		}
+
+		function drop(event){
+			
+			alert("adas");
+			// event.preventDefault();
+		 //    var data = event.dataTransfer.getData("Text");
+		 //    event.target.appendChild(document.getElementById(data));
+		 //    var id = event.target.id;
+		 //    var newNode = document.getElementById('demo').innerHTML = "Id: " + data + " to: " +id;
+
+			//DataService.drop(event);
+		}
+
+		function dragStart(event){
+			event.dataTransfer.setData("Text", event.target.id);
+			document.getElementById("demo").innerHTML = "Dragging " + event.target.id;
+			//DataService.dragStart(event);
+		}
+
+	 	
+	 	function allowDrop(event){
+	 		event.preventDefault();
+	 	}
  
 	}
 

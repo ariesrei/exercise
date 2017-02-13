@@ -1,0 +1,64 @@
+	<div ng-repeat="testdata in ticketCtrl.dataService.sampleData" ondrop="ticketCtrl.drop(event)" ondragover="allowDrop(event)">
+							 				
+		<div id="{{ testdata.id }}" class="draggable" ondragstart="dragStart(event)" draggable="true" >  
+			<strong>Title: {{ testdata.title }}</strong>
+			<p>Description: {{ testdata.description }}</p>
+			<p>Status: {{ testdata.status }}</p>
+		</div> 
+
+	</div>
+
+
+
+	 
+ <!-- <div class="droptarget" >
+  
+  <p ondragstart="dragStart(event)" draggable="true" id="dragtarget">Drag me!</p>
+
+</div> -->
+
+<p id="demo"></p>
+
+<div class="box-5"  ondragover="ticketCtrl.allowDrop(event)" id="planned" >
+
+	<h4>Planned</h4>
+
+	<div ticket-template="" ng-repeat="testdata in ticketCtrl.dataService.sampleData | filter: { status: 'planned' } " >
+	
+	</div>
+
+	
+</div>
+
+
+
+<div class="box-5" ondrop="drop(event)" ondragover="ticketCtrl.allowDrop(event)" id="working">
+	<h4>Working On</h4>
+
+	<div ticket-template="" ng-repeat="testdata in ticketCtrl.dataService.sampleData | filter: { status: 'working' } " >
+
+	</div>
+
+</div>
+
+
+
+<div class="box-5">
+	<h4>Resolved</h4>
+
+
+</div>
+
+<div class="box-5">
+	<h4>QA Tested</h4>
+
+
+</div>
+
+<div class="box-5">
+	<h4>Completed </h4>
+
+
+</div>
+
+ 

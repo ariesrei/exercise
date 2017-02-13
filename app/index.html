@@ -44,32 +44,12 @@
 			 				<table style="width:100%">
 			 					<tr>
 				 					<td colspan="2" style="border-bottom: 1px #ddd solid; position: relative; height: 40px;" >
-				 						<button class="btn btn-new  " ng-click="ticketCtrl.create()">Create a new job</button>
+				 						<button class="btn btn-new" ng-click="ticketCtrl.create()">Create a new job</button>
 				 					</td>
 			 					</tr>
 				 				<tr>
-					 				<td style="width: 15%">
 
-						 				<div ng-repeat="testdata in ticketCtrl.dataService.sampleData" ondrop="drop(event)" ondragover="allowDrop(event)">
-							 				
-							 				<div id="{{ testdata.id }}" class="draggable" 
-							 				 	ondragstart="dragStart(event)" draggable="true" >  
-							 					<strong>{{ testdata.title }}</strong>
-							 					<p>{{ testdata.description }}</p>
-							 					<p>{{ testdata.status }}</p>
-							 				</div> 
-
-							 				
-  											<!-- <p ondragstart="dragStart(event)" draggable="true" id="dragtarget">Drag me!</p> -->
-  
-							 			</div>
-
-							 			<p id="demo"></p>
-
-
-					 				</td>
-
-					 				<td style="width:85%">
+					 				<td style="width:100%">
 
 					 					<div create-ticket-form=""></div>
 
@@ -98,10 +78,8 @@
 	 </div>
 
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/controller/ticket-controller.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/controller/form-controller.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/controller/logout-controller.js" type="text/javascript" charset="utf-8"></script>
-
+	<script src="js/controller/controller.js" type="text/javascript" charset="utf-8"></script>
+ 
 	<!-- FACTORY -->
 	<script src="js/factory/factory.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/factory/dataservice.js" type="text/javascript" charset="utf-8"></script>
