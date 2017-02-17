@@ -5,10 +5,7 @@
 		.module("app")
 		.controller("formController", formController)
 		.controller("headerController", headerController)
-		.controller("ticketController", ticketController)
-		.controller("onDrop", onDrop);
-
-
+		.controller("ticketController", ticketController);
 
 	formController.$inject = ['LoginService', 'LogoutService', 'TicketService'];
 
@@ -63,27 +60,27 @@
 
 	}
 
-	ticketController.$inject = ['DataService','TicketService'];
+	ticketController.$inject = ['DataService','TicketService', 'NewTicketService'];
 
-	function ticketController(DataService, TicketService){
+	function ticketController(DataService, TicketService, NewTicketService){
 		
 		var vm = this;
 		vm.TicketService = TicketService;
 		vm.dataService = DataService;
+		vm.NewTicketService = NewTicketService;
 
 		vm.create = Create;
 		vm.createTicket = CreateTicket;
+		vm.updateTicket = UpdateTicket;
 
 		vm.title = '';
 		vm.description = '';
+		vm.newstatus = '';
 
-		vm.onDrop = onDrop;
-		//vm.dragStart = dragStart;
-
-		//vm.test = test;
 
 		function Create(){
-			alert("ASDASD");
+			//TicketService.changeState(false);
+			NewTicketService.changeState(false);
 		}
 		
 		function CreateTicket(){
@@ -97,37 +94,18 @@
 			else {
 				alert('Please fill the fields');
 			}
+
+			NewTicketService.changeState(true);
 			
 		}
 
-		// function test(){
-		// 	alert("asdas");
-		// }
+		function UpdateTicket(id,status){
+	 
+			vm.newstatus = status;
+   			
+    		//DataService.updateTicket(id, status);
+		}
 
-		// function drop(event){
-			
-		// 	alert("adas");
-		// }
-
-		// function dragStart(event){
-		// 	event.dataTransfer.setData("Text", event.target.id);
-		// 	document.getElementById("demo").innerHTML = "Dragging " + event.target.id;
-		// 	//DataService.dragStart(event);
-		// }
- 	
-	 // 	function allowDrop(event){
-	 // 		event.preventDefault();
-	 // 	}
-
-	 	function onDrop(task){
-
-			console.log('here:' + task);
-			
-	   	}
- 
 	}
-
-
-
 
 })();

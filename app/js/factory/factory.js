@@ -6,27 +6,15 @@
 		.module("app")
 		.factory("LoginService", LoginService)
 		.factory("LogoutService", LogoutService)
-		.factory("TicketService", TicketService);
+		.factory("TicketService", TicketService)
+		.factory("NewTicketService", NewTicketService);
+		
 		
 
 	function LoginService(){
 
-	 //    var admin = 'admin';
-	 //    var pass = 'a8cebu';
-	 //    var isAuthenticated = false;
-
-	 //    return {
-		// 	login : function(username, password) {
-		// 		isAuthenticated = username === admin && password === pass;
-		// 		return isAuthenticated;
-		// 	},
-		// 	isAuthenticated : function() {
-		// 		return isAuthenticated;
-		// 	}
-		// };
-
 	   	var admin = 'admin';
-	    var pass = 'a8cebu';
+	    var pass = 'password';
 	    var isAuthenticated = false;
 
 	    var myObj = {
@@ -73,7 +61,7 @@
 	function TicketService(){
 
 		var myObj = {
-	    	ticketActive: false, //
+	    	ticketActive: true, //
 	    	changeState: changeState
 	    }
 
@@ -84,5 +72,18 @@
 	    }
 	}
 
+
+	function NewTicketService(){
+		var myObj = {
+	    	newticketActive: true, //
+	    	changeState: changeState
+	    }
+
+	    return myObj;
+
+	    function changeState(state){
+	    	myObj.newticketActive = state;
+	    }
+	}
 
 })();

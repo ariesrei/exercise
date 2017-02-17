@@ -1,0 +1,15 @@
+<div id="{{statusdata.status}}" class="box-5" droppable-directive  ondrop="" ondragover="allowDrop(event)" on-load-callback="ticketCtrl.updateTicket(arg1,arg2)" >
+
+	<h4>{{statusdata.status}}</h4>
+
+<!-- 	<div ticket-template="" 
+		ng-repeat="testdata in ticketCtrl.dataService.dataStatus | filter: { status: statusdata.status }" 
+		ondragover="allowDrop(event)" >
+	</div> -->
+
+	<div ticket-template="" 
+		ng-repeat="testdata in ticketCtrl.dataService.sampleData | filter: { status: statusdata.status }" 
+		ondragover="allowDrop(event)" >
+	</div>
+
+</div>
