@@ -19,7 +19,7 @@
 
 		return {
 			restrict: 'A',
-			templateUrl: '../../templates/loginForm.html'
+			templateUrl: 'templates/loginForm.html'
 		};
 
 	}
@@ -29,7 +29,7 @@
 
 		return {
 			restrict: 'A',
-			templateUrl: '../../templates/main.html'
+			templateUrl: 'templates/main.html'
 		};
 	}
 
@@ -37,7 +37,7 @@
 		
 		return {
 			restrict: 'A',
-			templateUrl: '../../templates/createTicketForm.html'
+			templateUrl: 'templates/createTicketForm.html'
 		};
 	}
 
@@ -45,7 +45,7 @@
 		
 		return {
 			restrict: 'A',
-			templateUrl: '../../templates/ticketTemplate.html'
+			templateUrl: 'templates/ticketTemplate.html'
 		};
 	}
 
@@ -53,7 +53,7 @@
 		
 		return {
 			restrict: 'A',
-			templateUrl: '../../templates/statusData.html'
+			templateUrl: 'templates/statusData.html'
 		};
 	}
 

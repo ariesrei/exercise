@@ -100,10 +100,9 @@
 		}
 
 		function UpdateTicket(id,status){
-	 
-			vm.newstatus = status;
-   			
-    		//DataService.updateTicket(id, status);
+	 		
+    		DataService.updateTicket(id, status);
+
 		}
 
 	}

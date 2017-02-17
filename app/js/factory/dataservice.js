@@ -15,6 +15,7 @@
 			updateTicket: updateTicket
 		}
 
+
 		var dataLength = sampleData.length + 1;
 
 	    return dataObj;
@@ -29,14 +30,18 @@
 	    }
 	    
 	    function updateTicket(id, status){
- 
+ 			// if(sampleData.id = id){
+ 			// 	this.status = status;
+ 			// 	alert(id + this.status);
+
+ 			// }
 	    }
 
 
 	}
  
 
-	var sampleData = [
+	var sampleData = [  
 		{
 			"id": '1',
 			"title": "#9820",
@@ -60,34 +65,33 @@
 	var dataStatus = [
 		{
 			"status": "planned",
-			"ticket": [ 
-				{
+			"tickets": {
 					"id": '1',
 					"title": "#2910",
 					"description": "Description here",
 					"status": "planned"
 				}
-			]
 		},
 		{ 
 			"status":  "working",
-			"ticket": [ 
-				{
-					"id": '1',
+			"tickets": {
+					"id": '2',
 					"title": "#2911",
 					"description": "Working description here",
 					"status": "working"
 				}
-			]
 		},
 		{	
-			"status":  "resolved"
+			"status":  "resolved",
+			"tickets": { }
 		},
 		{	 
-			"status":  "tested"
+			"status":  "tested",
+			"tickets": { }
 		},
 		{	
-			"status":  "completed"
+			"status":  "completed",
+			"tickets": { }
 		}
 	];
 
