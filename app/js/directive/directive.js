@@ -6,6 +6,7 @@
 
 	angular
 		.module("app")
+		.directive("subMenu", subMenu)
 		.directive("loginForm", loginFormDirective)
 		.directive("ticketApp", Main)
 		.directive("createTicketForm", createTicketForm)
@@ -15,13 +16,19 @@
 		.directive("droppableDirective", droppableDirective);
 
 
-	function loginFormDirective(){
+	function subMenu(){
+		return {
+			restrict: 'A',
+			templateUrl: 'templates/subMenu.html'
+		};
+	}
 
+
+	function loginFormDirective(){
 		return {
 			restrict: 'A',
 			templateUrl: 'templates/loginForm.html'
 		};
-
 	}
 
 

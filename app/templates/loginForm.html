@@ -1,4 +1,4 @@
-<form class="loginForm" ng-submit="formCtrl.Authenticate()" ng-hide="formCtrl.LoginService.loginActive">
+<form class="loginForm" ng-submit="formCtrl.Authenticate()" ng-hide="formCtrl.StateChange.loginHide">
 	<h2>Login</h2>
 	<table>
 	<tr>
@@ -16,7 +16,7 @@
 	</table>
 	
 
-	<div class="error" ng-hide="formCtrl.LoginService.hideError"> {{ formCtrl.error }} </div>
+	<div class="error" ng-hide="formCtrl.StateChange.hideError"> {{ formCtrl.error }} </div>
 	
 	<div style="text-align:center; font-size: 12px; font-weight:bold;"> user: admin  /  pass: password </div>
 </form> 

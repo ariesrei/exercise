@@ -1,46 +1,6 @@
 (function(){
 	'use strict';
 
-
-	angular
-		.module("app")
-		.factory("DataService", DataService);
-
-	function DataService(){
-
-		var dataObj = {
-			sampleData: sampleData,
-			dataStatus: dataStatus,
-			addTicket: addTicket,
-			updateTicket: updateTicket
-		}
-
-
-		var dataLength = sampleData.length + 1;
-
-	    return dataObj;
-
-	    function addTicket(title, description){
-	    	sampleData.push({
-	    		id: dataLength,
-		 		title: title,
-		 		description: description,
-		 		status: 'planned'
-			});
-	    }
-	    
-	    function updateTicket(id, status){
- 			// if(sampleData.id = id){
- 			// 	this.status = status;
- 			// 	alert(id + this.status);
-
- 			// }
-	    }
-
-
-	}
- 
-
 	var sampleData = [  
 		{
 			"id": '1',
@@ -95,5 +55,43 @@
 		}
 	];
 
+
+	angular
+		.module("app")
+		.factory("DataService", DataService);
+
+	function DataService(){
+
+		var dataObj = {
+			sampleData: sampleData,
+			dataStatus: dataStatus,
+			addTicket: addTicket,
+			updateTicket: updateTicket
+		}
+
+		var dataLength = sampleData.length + 1;
+		var newStatus1;
+	  
+	    function addTicket(title, description){
+	    	sampleData.push({
+	    		id: dataLength,
+		 		title: title,
+		 		description: description,
+		 		status: 'planned'
+			});
+			//alert(sampleData);
+	    }
+	    
+	    function updateTicket(id, status){
+	    	newStatus1 = status
+ 			// if(sampleData.id = id){
+ 			// 	this.status = status;
+ 			// 	alert(id + this.status);
+
+ 			// }
+	    }
+      	
+      	return dataObj;
+	}
 
 })();

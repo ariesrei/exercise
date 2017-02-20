@@ -18,9 +18,9 @@
 
 		 		<div class="pull-right" ng-controller="headerController as headerCtrl">
 
-		 			<span class="pull-right" ng-hide="headerCtrl.LoginService.loginActive">Welcome Guest</span>
+		 			<span class="pull-right" ng-hide="headerCtrl.StateChange.welcome">Welcome Guest</span>
 		 			<button class="btn btn-logout" 
-		 				ng-hide="headerCtrl.LogoutService.logoutActive" 
+		 				ng-hide="headerCtrl.StateChange.logoutActive" 
 		 				ng-click="headerCtrl.showLogout()">
 		 					Logout
 		 			</button>
@@ -39,26 +39,10 @@
 
 		 			<div class="main-ticket" ng-controller="ticketController as ticketCtrl">
 		 				
-		 				<div ng-hide="ticketCtrl.TicketService.ticketActive">
-
-			 				<table style="width:100%">
-			 					<tr>
-				 					<td colspan="2" style="border-bottom: 1px #ddd solid; position: relative; height: 40px;" >
-				 						<button class="btn btn-new" ng-click="ticketCtrl.create()">Create a new job</button>
-				 					</td>
-			 					</tr>
-				 				<tr>
-
-					 				<td style="width:100%">
-
-					 					<div create-ticket-form=""></div>
-
-					 					<div ticket-app=""></div>
-					 					
-					 				</td>
-				 				</tr>
-			 				</table>
-
+		 				<div ng-hide="ticketCtrl.StateChange.ticketActive">
+							<div sub-menu class="fl"></div>
+		 					<div create-ticket-form="" class="fl"></div>
+		 					<div ticket-app="" class="fl"></div>
 			 			</div>
 
 			 		</div>

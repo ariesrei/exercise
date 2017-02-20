@@ -83,24 +83,25 @@ footer {
 	padding: 10px 20px;
 }
 
-.btn-login {
-	background-color:#0D70A5;
-	border-radius: 10px;
+#demo {
+	padding: 5px;
+	border: 1px #f98181 solid;
+	margin-bottom: 10px;
+	color: #f98181;
 	font-weight: bold;
-	font-size: 12px;
-	border: 1px #0C78B2 solid;
-	color: #dddddd;
-	box-shadow: inset 0 10px 10px #0F92D8;
 }
 
-.btn-new {
-	background-color:#35A06A;
-	border-radius: 10px;
+.btn-login,
+.btn-new,
+.btn-create {
+	padding: 5px 20px;
+	background-color:#0966a0;
+	border-radius: 6px;
 	font-weight: bold;
 	font-size: 12px;
-	border: 1px #38AA71 solid;
+	border: 1px #096aa5 solid;
 	color: #eeeeee;
-	box-shadow: inset 0 10px 10px #3AB779;
+	box-shadow: inset 0 10px 10px #2da6ed;
 }
 
 .btn-logout {
@@ -143,22 +144,6 @@ thead {
 	color: red;
 }
 
-.box-5 {
-	float:left;
-	width: 19.7%;
-	margin: 0px; 
-	border: 1px #ddd solid;
-	text-align: center;
-	min-height:200px;
-}
-
-.box-5 h4 {
-	color: white;
-	background-color: #203021;
-	line-height: 30px;
-	display: block;
-}
-
 .main-ticket {
 	font-size: 12px;
 }
@@ -175,9 +160,53 @@ thead {
 
 .createForm {
 	line-height:22px;
+	margin: 10px auto;
+	width: 500px;
+	padding: 20px;
+	background-color: #333;
+	color: #eee;
 }
 
 .createForm input{
+	width: 95%;
+	display: block;
 	padding: 5px;
+	margin-bottom: 5px;
 	border: 1px #ddd solid;
+}
+
+[sub-menu] {
+	background-color: #666;
+	color: #eee;
+}
+.sub-menu li {
+	float:left; 
+	list-style: none; 
+	margin: 10px; 
+	font-size: 14px; 
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.fl {
+	float: left;
+	width: 100%;
+}
+
+[status-data]{
+	width: 20%;
+}
+[status-data] h4{
+	padding: 10px;
+	background-color: #444;
+	color: #eee;
+}
+[status-data] > div{
+	width: 100%;
+	min-height: 300px;
+	border: 1px #ddd solid;
+}
+
+[draggable-directive] {
+	margin-top: 5px;
 }

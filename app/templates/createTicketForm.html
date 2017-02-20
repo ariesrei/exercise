@@ -1,24 +1,12 @@
 
-<div ng-hide="ticketCtrl.NewTicketService.newticketActive">
-<form class="createForm" ng-submit="ticketCtrl.createTicket()"  >
+<div ng-hide="ticketCtrl.StateChange.newticketActive">
+<form class="createForm" ng-submit="ticketCtrl.CreateTicket()">
+
+
+	 Title: <input type="text" placeholder="Title" ng-model="ticketCtrl.title"/> 
+	 Description: <input type="text" placeholder="Description" ng-model="ticketCtrl.description" /> 
+	 <button class="btn btn-create" type="submit">Create</button> 
  
-
-	<table>
-	<tr>
-		<td style="width: 15%">Title:</td>
-		<td style="width: 85%"><input type="text" placeholder="Title" ng-model="ticketCtrl.title"/></td>
-	</tr>
-	<tr>
-		<td>Description:</td>
-		<td><input type="text" placeholder="Description" ng-model="ticketCtrl.description" /></td>
-	</tr>
-	<tr>
-		<td> </td>
-		<td><button class="btn btn-create" type="submit">Create</button></td>
-	</tr>
-	</table>
-
-
 
 </form> 
 </div>
