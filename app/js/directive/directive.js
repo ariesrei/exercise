@@ -106,13 +106,16 @@
 	        link: function(scope, element, attr) {
 
     			element.on('drop', function(dropevent){
-					dropevent.preventDefault();
-					var id = dropevent.dataTransfer.getData("Text");
-				    dropevent.target.appendChild(document.getElementById(id));
-				    var status = dropevent.target.id;
-				    var newNode = document.getElementById('demo').innerHTML = "Id: " + id + "  to status: " + status;
+    				var id = dropevent.dataTransfer.getData("Text");
+    				var status = dropevent.target.id;
+				    
+				    var newNode = document.getElementById('demo').innerHTML = "Id: " + id + "  to status: " + status; 
 
+					dropevent.preventDefault();
+				    dropevent.target.appendChild(document.getElementById(id));
+				   	
 				    scope.onLoadCallback({arg1: id, arg2: status});
+
 				});
 
 	 	 	}

@@ -47,6 +47,8 @@
 		
 		var vm = this;
 
+		//vm.$watch(vm.selectedQuery);
+
 		function ShowCreateTicketForm(){
 			StateChange.changeState(false);
 		}
@@ -65,26 +67,44 @@
 			StateChange.changeState(true);
 		}
 
-
-		function UpdateTicket(id,status){
-	 		vm.newstatus = status;
-
-	 		//DataService.updateTicket(id,status)
-    		//DataService.updateTicket(id, status);
+		function UpdateTicket(id, status){
+			//alert(status);
 		}
 
-		vm.StateChange = StateChange;
-		//vm.TicketService = TicketService;
-		vm.dataService = DataService;
-		//vm.NewTicketService = NewTicketService;
+		function appoint(){
+			alert("Changed!");
+		}
 
+		function selectedQuery(newVal, oldVal){
+			if (vm.selectedQuery) {
+		        vm.parameters = vm.selectedQuery.fields;
+		    }
+		}	
+
+		// vm.queryList = DataService.dataStatus;
+		// vm.models = "asdas";
+
+		//console.log(vm.queryList);
+		//alert(vm.queryList);
+
+		// Factories
+		vm.StateChange = StateChange;
+		vm.dataService = DataService;
+ 
+ 		// Functions
+		vm.appoint = appoint;
 		vm.ShowCreateTicketForm = ShowCreateTicketForm;
 		vm.CreateTicket = CreateTicket;
 		vm.UpdateTicket = UpdateTicket;
 
 		vm.title = '';
 		vm.description = '';
-		vm.newstatus = '';
+
+		vm.test = '';
+		vm.planned = '';
+		
+		vm.selectedQuery = selectedQuery;
+		vm.parameters = '';
 
 	}
 

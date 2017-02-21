@@ -38,8 +38,8 @@
 			loginHide: false,
 			welcome: false,
 	    	logoutActive: true,
-			ticketActive: true,
-	    	newticketActive: true,
+			ticketActive: false, // default true
+	    	newticketActive: true, // default true
 	    	hideError: true,
 	    	changeState: changeState,
 	    	LoginSuccess: LoginSuccess,

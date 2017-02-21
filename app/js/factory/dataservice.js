@@ -25,36 +25,27 @@
 	var dataStatus = [
 		{
 			"status": "planned",
-			"tickets": {
-					"id": '1',
-					"title": "#2910",
-					"description": "Description here",
-					"status": "planned"
-				}
+			"fields": ["Name", "Id"]
 		},
 		{ 
 			"status":  "working",
-			"tickets": {
-					"id": '2',
-					"title": "#2911",
-					"description": "Working description here",
-					"status": "working"
-				}
+			"fields": ["Name", "Id"]
 		},
 		{	
 			"status":  "resolved",
-			"tickets": { }
+			"fields": ["Name", "Id"]
 		},
 		{	 
 			"status":  "tested",
-			"tickets": { }
+			"fields": ["Name", "Id"]
 		},
 		{	
 			"status":  "completed",
-			"tickets": { }
+			"fields": ["Name", "Id"]
 		}
 	];
 
+	var test = '';
 
 	angular
 		.module("app")
@@ -83,12 +74,7 @@
 	    }
 	    
 	    function updateTicket(id, status){
-	    	newStatus1 = status
- 			// if(sampleData.id = id){
- 			// 	this.status = status;
- 			// 	alert(id + this.status);
-
- 			// }
+ 
 	    }
       	
       	return dataObj;
