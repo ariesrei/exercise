@@ -47,8 +47,8 @@
 		
 		var vm = this;
 
-		//vm.$watch(vm.selectedQuery);
-
+		//vm.$watch(DataService);
+		
 		function ShowCreateTicketForm(){
 			StateChange.changeState(false);
 		}
@@ -69,42 +69,28 @@
 
 		function UpdateTicket(id, status){
 			//alert(status);
+			DataService.updateTicket(id, status);
 		}
 
-		function appoint(){
-			alert("Changed!");
+		function Delete(id){
+			alert("Deleting.." + id);
+			DataService.deleteTicket(id);
+
+			this.destroy();
 		}
-
-		function selectedQuery(newVal, oldVal){
-			if (vm.selectedQuery) {
-		        vm.parameters = vm.selectedQuery.fields;
-		    }
-		}	
-
-		// vm.queryList = DataService.dataStatus;
-		// vm.models = "asdas";
-
-		//console.log(vm.queryList);
-		//alert(vm.queryList);
 
 		// Factories
 		vm.StateChange = StateChange;
 		vm.dataService = DataService;
  
  		// Functions
-		vm.appoint = appoint;
 		vm.ShowCreateTicketForm = ShowCreateTicketForm;
 		vm.CreateTicket = CreateTicket;
 		vm.UpdateTicket = UpdateTicket;
+		vm.Delete = Delete;
 
 		vm.title = '';
 		vm.description = '';
-
-		vm.test = '';
-		vm.planned = '';
-		
-		vm.selectedQuery = selectedQuery;
-		vm.parameters = '';
 
 	}
 

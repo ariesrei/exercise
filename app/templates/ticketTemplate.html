@@ -1,14 +1,11 @@
  					 				
 <div id="{{ testdata.id }}" draggable-directive ondragstart="" draggable="true">  
-
+<span class="close-btn" ng-click="ticketCtrl.Delete(testdata.id)">X</span>
 	<strong>Title: {{ testdata.title }}</strong>
 	<p>Description: {{ testdata.description }}</p>
-	<p>Status: {{ statusdata.status }}</p>
- 	
- 	<p>Status: {{ ticketCtrl.test }} </p>
- 
-	<!-- <p>Status: {{statusdata.status}}</p>
-	 -->
+	
+	<!-- <p>Status: {{ testdata.status }}</p> -->
+
 	<!-- <input type="text" ng-model="statusdata.status" style="background-color: rgba(0,0,0,0); border: none; width: 100%" disabled="" /> -->
 </div> 
 

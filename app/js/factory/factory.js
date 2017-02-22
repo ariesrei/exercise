@@ -1,13 +1,8 @@
 'use strict';
 
-(function(){
-
 	angular
 		.module("app")
 		.factory("LoginService", LoginService)
-		//.factory("LogoutService", LogoutService)
-		//.factory("TicketService", TicketService)
-		//.factory("NewTicketService", NewTicketService)
 		.factory("StateChange", StateChange);
 		
 
@@ -38,7 +33,7 @@
 			loginHide: false,
 			welcome: false,
 	    	logoutActive: true,
-			ticketActive: false, // default true
+			ticketActive: true, // default true
 	    	newticketActive: true, // default true
 	    	hideError: true,
 	    	changeState: changeState,
@@ -70,4 +65,3 @@
 	    return myObj;
 	}
 
-})();

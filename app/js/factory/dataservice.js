@@ -1,21 +1,20 @@
-(function(){
-	'use strict';
+'use strict';
 
 	var sampleData = [  
 		{
-			"id": '1',
+			"id": '0',
 			"title": "#9820",
 			"description": "Dobidobido",
 			"status": "working"
 		},
 		{
-			"id": '2',
+			"id": '1',
 			"title": "#2910",
 			"description": "Color me red",
 			"status":  "planned"
 		},
 		{	
-			"id": '3',
+			"id": '2',
 			"title": "#2019",
 			"description": "Change background color",
 			"status":  "planned"
@@ -24,32 +23,25 @@
 
 	var dataStatus = [
 		{
-			"status": "planned",
-			"fields": ["Name", "Id"]
+			"status": "planned"
 		},
 		{ 
-			"status":  "working",
-			"fields": ["Name", "Id"]
+			"status":  "working"
 		},
 		{	
-			"status":  "resolved",
-			"fields": ["Name", "Id"]
+			"status":  "resolved"
 		},
 		{	 
-			"status":  "tested",
-			"fields": ["Name", "Id"]
+			"status":  "tested"
 		},
 		{	
-			"status":  "completed",
-			"fields": ["Name", "Id"]
+			"status":  "completed"
 		}
 	];
 
-	var test = '';
-
 	angular
 		.module("app")
-		.factory("DataService", DataService);
+		.service("DataService", DataService);
 
 	function DataService(){
 
@@ -57,12 +49,12 @@
 			sampleData: sampleData,
 			dataStatus: dataStatus,
 			addTicket: addTicket,
-			updateTicket: updateTicket
+			updateTicket: updateTicket,
+			deleteTicket: deleteTicket
 		}
 
-		var dataLength = sampleData.length + 1;
-		var newStatus1;
-	  
+		var dataLength = sampleData.length;
+
 	    function addTicket(title, description){
 	    	sampleData.push({
 	    		id: dataLength,
@@ -74,10 +66,22 @@
 	    }
 	    
 	    function updateTicket(id, status){
- 
+			
+			for (var i in sampleData) {
+		     	if (sampleData[i].id == id) {
+			        sampleData[i].status = status;
+		     	}
+		   	}
+			alert(JSON.stringify(sampleData));
+			return sampleData;
 	    }
+
+	    function deleteTicket(id){
+		    sampleData.splice(id, 1);
+		   	alert(JSON.stringify(sampleData));
+	    }
+
       	
       	return dataObj;
-	}
 
-})();
+	}

@@ -1,7 +1,5 @@
+'use strict';
  
-(function(){
-	'use strict';
-
 	//alert("Found Me!");
 
 	angular
@@ -124,4 +122,4 @@
 
 	}
 
-})();
+ 

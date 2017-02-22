@@ -114,6 +114,11 @@ footer {
 	box-shadow: inset 0 10px 10px #950b0e;
 }
 
+.close-btn {
+	position: absolute;
+	right: 10px;
+}
+
 .pull-right {
 	position: absolute;
 	top: 20px;
