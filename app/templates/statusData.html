@@ -1,19 +1,16 @@
 
-<div id="{{statusdata.status}}"  
-	droppable-directive  ondrop="" ondragover="allowDrop(event)" on-load-callback="ticketCtrl.UpdateTicket(arg1,arg2)">
+<div id="{{status}}" >
+	
+	<h4>{{status}}</h4>
 
-	<h4>{{statusdata.status}}</h4>
+	<div  id="{{status}}" droppable-directive ondrop="" ondragover="allowDrop(event)" on-load-callback="ticketCtrl.updateTicket(arg1,arg2)">
 
-	<div ticket-template="" 
-		ng-repeat="testdata in ticketCtrl.dataService.sampleData | filter: { status: statusdata.status }" 
-		ondragover="allowDrop(event)" >
+		<div ticket-template 
+			ng-repeat="tickets in ticketCtrl.dataService.tickets | filter:{ status : status}"
+			ondragover="allowDrop(event)" >
+		</div>
+
 	</div>
-	<!-- <div ticket-template="" 
-		ng-repeat="testdata in ticketCtrl.dataService.dataStatus.tickets | filter: { status: statusdata.status }" 
-		ondragover="allowDrop(event)" >
-	</div> -->
+	
 </div>
 
-<!--
-ng-model="ticketCtrl.selectedQuery" ng-options="q.status for q in ticketCtrl.queryList" 
--->

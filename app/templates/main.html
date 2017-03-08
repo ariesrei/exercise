@@ -1,12 +1,10 @@
-<p id="demo"></p>
 
 
-<table>
 
-	<tr>
+<div class="content">
 
-		<td ng-repeat="statusdata in ticketCtrl.dataService.dataStatus" status-data=""></td>
-		
-	</tr>
+	<login-form ng-controller="formController as formCtrl"></login-form>
 
-</table>
+	<ticket-swimlane class="main-ticket"></ticket-swimlane>
+
+</div>

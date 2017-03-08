@@ -10,58 +10,16 @@
 
 <body>
 	<div class="container">
+
+	 	<div header-dir></div>
+
+	 	<div main-dir></div>
+		 	 
+		<div footer-dir></div>
 	 	
-		<div>
-
-		 	<header>
-		 		<h1>Exercise: Test</h1>
-
-		 		<div class="pull-right" ng-controller="headerController as headerCtrl">
-
-		 			<span class="pull-right" ng-hide="headerCtrl.StateChange.welcome">Welcome Guest</span>
-		 			<button class="btn btn-logout" 
-		 				ng-hide="headerCtrl.StateChange.logoutActive" 
-		 				ng-click="headerCtrl.showLogout()">
-		 					Logout
-		 			</button>
-
-	 			</div>
-
-		 	</header>
-
-		 	<main>
-
-		 		<div class="content"  >
-
-		 			<div ng-controller="formController as formCtrl">
-		 				<div login-form=""></div>
-		 			</div>
-
-		 			<div class="main-ticket" ng-controller="ticketController as ticketCtrl">
-		 				
-		 				<div ng-hide="ticketCtrl.StateChange.ticketActive">
-							<div sub-menu class="fl"></div>
-		 					<div create-ticket-form="" class="fl"></div>
-
-		 					<div ticket-app="" class="fl"></div>
-		 					
-			 			</div>
-
-			 		</div>
-
-		 		</div>
-		 
-		 	</main>
-
-	 	</div>
-
-	 	<footer>
-	 		<span style="font-size: 12px; font-weight: bold;">AngularJs Exercise</footer>
-	 	</footer>
-
-	 	
-
 	 </div>
+
+
 
 	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/controller/controller.js" type="text/javascript" charset="utf-8"></script>
@@ -71,7 +29,9 @@
 	<script src="js/factory/dataservice.js" type="text/javascript" charset="utf-8"></script>
 
 	<!-- DIRECTIVES -->
+	<script src="js/directive/header-directive.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/directive/directive.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/directive/footer-directive.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
 </html>

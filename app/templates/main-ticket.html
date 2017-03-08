@@ -1,0 +1,26 @@
+
+<div ng-controller="ticketController as ticketCtrl">
+	
+	<div ng-if="ticketCtrl.stateChange.ticketActive">
+
+	<ul class="sub-menu fl">
+		<li ng-click="ticketCtrl.showCreateTicketForm()"> Create a new ticket </li> 
+		<li>Activity</li>
+		<li>Issue</li>
+	</ul>
+
+	<div create-ticket-form class="fl"></div>
+
+	<p id="demo" class="fl">   </p>
+
+	<table>
+		<tr>
+			<td ng-repeat="status in ticketCtrl.dataService.statuses" status-data></td>
+		</tr>
+	</table>
+
+	{{ ticketCtrl.dataService.tickets}}
+
+	</div>
+
+</div>

@@ -1,12 +1,26 @@
 
-<div ng-hide="ticketCtrl.StateChange.newticketActive">
-<form class="createForm" ng-submit="ticketCtrl.CreateTicket()">
+<div ng-if="ticketCtrl.stateChange.newticketActive">
+
+	<form class="createForm" ng-submit="ticketCtrl.createTicket()">
+
+		 Title: <input type="text" placeholder="Title" ng-model="ticketCtrl.title"/> 
+		 Description: <input type="text" placeholder="Description" ng-model="ticketCtrl.description" /> 
+		 <button class="btn btn-create" type="submit">Save</button> 
+	
+	</form> 
+	
+</div>
 
 
-	 Title: <input type="text" placeholder="Title" ng-model="ticketCtrl.title"/> 
-	 Description: <input type="text" placeholder="Description" ng-model="ticketCtrl.description" /> 
-	 <button class="btn btn-create" type="submit">Create</button> 
- 
 
-</form> 
+<div ng-if="ticketCtrl.stateChange.editTicketActive">
+
+	<form class="createForm" ng-submit="ticketCtrl.editTicket(ticketCtrl.id, ticketCtrl.title, ticketCtrl.description)">
+		 Title: <input type="text" placeholder="Title" ng-model="ticketCtrl.title"/> 
+		 Description: <input type="text" placeholder="Description" ng-model="ticketCtrl.description" /> 
+		 <button class="btn btn-create" type="submit">Save</button> 
+		 <button class="btn btn-close" type="submit" ng-click="ticketCtrl.closeEdit()">Close</button> 
+	
+	</form> 
+	
 </div>

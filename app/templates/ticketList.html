@@ -1,0 +1,10 @@
+ 
+<div id="{{ tickets.id }}" draggable-directive ondragstart="" draggable="true" >
+			
+	<span draggable="true" class="close-btn close" ng-click="ticketCtrl.deleteTicket(tickets.id)">Close</span>
+	<span draggable="true" class="edit-btn edit" ng-click="ticketCtrl.editTicket(tickets.id, tickets.title, tickets.description)">Edit</span>
+
+	<strong draggable="true"> Title: {{ tickets.title }} </strong> <br/>
+	<span draggable="true">Description: {{ tickets.description }} </span>
+
+</div>

@@ -1,15 +1,11 @@
 'use strict';
 
-	angular
-		.module("app")
-		.factory("LoginService", LoginService)
-		.factory("StateChange", StateChange);
-		
-
-	function LoginService(){
+(function(app_factory){
+	
+	function loginService(){
 
 	   	var admin = 'admin';
-	    var pass = 'password';
+	    var pass = '123';
 	    var isAuthenticated = false;
 
 	    var myObj = {
@@ -25,43 +21,64 @@
 	    function isAuthenticated(){
 			return isAuthenticated;
 	    }
+
 	    return myObj;
+
 	}
 
-	function StateChange(){
+	// 
+	function stateChange(){
+
 		var myObj = {
-			loginHide: false,
-			welcome: false,
-	    	logoutActive: true,
-			ticketActive: true, // default true
-	    	newticketActive: true, // default true
-	    	hideError: true,
+			welcome: true,
+			loginHide: true,
+	    	logoutActive: false,
+	    	hideError: false,
+
+			ticketActive: false, // default true
+	    	newticketActive: false, // default true
+			editTicketActive: false, // default true
+
 	    	changeState: changeState,
-	    	LoginSuccess: LoginSuccess,
-	    	LogoutSuccess: LogoutSuccess
+	    	activeEdit: activeEdit,
+	    	loginSuccess: loginSuccess,
+	    	logoutSuccess: logoutSuccess
+
 	    }
 
-	    function LoginSuccess(){
-	    	myObj.welcome = true;
-	    	myObj.loginHide = true;
-	    	myObj.logoutActive = false;
-	    	myObj.hideError = true;
-	    	myObj.ticketActive =  false;
-	    }
-
-	    function LogoutSuccess(){
+	    function loginSuccess(){
 	    	myObj.welcome = false;
 	    	myObj.loginHide = false;
 	    	myObj.logoutActive = true;
-	    	myObj.ticketActive = true;
+	    	myObj.hideError = false;
+	    	myObj.ticketActive =  true;
+	    }
+
+	    function logoutSuccess(){
+	    	myObj.welcome = true;
+	    	myObj.loginHide = true;
+	    	myObj.logoutActive = false;
+	    	myObj.ticketActive = false;
 	    	myObj.newticketActive = true;
 	    	alert("Thank you");
 	    }
 
 	    function changeState(state){
 	    	myObj.newticketActive = state;
+	    	//alert("Alert!");
+	    }
+
+	    function activeEdit(state){
+	    	myObj.editTicketActive = state;
+	    	//title = '';
 	    }
 
 	    return myObj;
+
 	}
 
+	app_factory.factory("loginService", loginService);
+	app_factory.factory("stateChange", stateChange);
+
+
+})(Swimlane);

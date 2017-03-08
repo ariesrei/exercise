@@ -1,97 +1,132 @@
-(function(){
-	'use strict';
+'use strict';
 
-	angular
-		.module("app")
-		.controller("formController", formController)
-		.controller("headerController", headerController)
-		.controller("ticketController", ticketController);
+(function(app_controller){
+	
+	//alert(JSON.stringify(Swimlane));
 
-	formController.$inject = ['LoginService', 'StateChange'];
-	function formController(LoginService, StateChange){
+	function headerController(stateChange){
+
 		var vm = this;
 
-		function Authenticate(){
-			if(LoginService.login(vm.username, vm.password)) {
-				vm.error = '';
-				vm.username = '';
-				vm.password = '';
-
-				StateChange.LoginSuccess();
-			} 
-			else {
-				StateChange.hideError = false;
-				vm.error = "Incorrect username/password!";
-			} 
-		}
-		vm.Authenticate = Authenticate;
-		vm.LoginService = LoginService;
-		vm.StateChange = StateChange;
-		vm.username = '';
-		vm.password = '';	
-	}
-
-	headerController.$inject = ['StateChange'];
-	function headerController(StateChange){
-		var vm = this;
 		function showLogout(){
-			StateChange.LogoutSuccess();	
+			stateChange.logoutSuccess();	
 		}
-		vm.StateChange = StateChange;
+
+		vm.stateChange = stateChange;
+
 		vm.showLogout = showLogout;
 	}
 
 
-	ticketController.$inject = ['DataService', 'StateChange'];
-	function ticketController(DataService, StateChange){
-		
+	// =================================================
+
+	function formController(loginService, stateChange){
+
 		var vm = this;
 
-		//vm.$watch(DataService);
-		
-		function ShowCreateTicketForm(){
-			StateChange.changeState(false);
+		function authenticate(){
+			if(loginService.login(vm.username, vm.password)) {
+				vm.error = '';
+				vm.username = '';
+				vm.password = '';
+
+				stateChange.loginSuccess();
+			} 
+			else {
+				stateChange.hideError = true;
+				vm.error = "Incorrect username/password!";
+			} 
+
+		}
+
+		vm.loginService = loginService;
+		vm.stateChange = stateChange;
+
+		vm.authenticate = authenticate;
+		vm.username = '';
+		vm.password = '';	
+
+	}
+	
+
+	//=====================================================
+
+	function ticketController(dataService, stateChange){
+
+		var vm = this;
+
+		function showCreateTicketForm(){
+			stateChange.changeState(true);
+			//alert("Alert adadsd");
 		}
 		
-		function CreateTicket(){
-
+		function createTicket(){
+			
 			if(vm.title !== '' && vm.description !== ''){
-				DataService.addTicket(vm.title, vm.description);
+				dataService.addTicket(vm.title, vm.description);
 				vm.title = '';
 				vm.description = '';
 			}
 			else {
 				alert('Please fill the fields');
 			}
+			stateChange.changeState(false);
+		}
+
+		function updateTicket(id, status){
+			//alert(id + status);
+			if(id){
+				dataService.updateTicket(id, status);
+			}
+		}
+
+		function deleteTicket(id){
+			//alert("Deleting.." + id);
+			dataService.deleteTicket(id);
+		}
+
+		function editTicket(id, title, description){
+			stateChange.activeEdit(true);
+
+			vm.id = id;
+			vm.title = title;
+			vm.description = description;
+			dataService.editTicket(id, title, description);
 			
-			StateChange.changeState(true);
 		}
 
-		function UpdateTicket(id, status){
-			//alert(status);
-			DataService.updateTicket(id, status);
+		function closeEdit(){
+			stateChange.activeEdit(false);	
+			vm.title = '';
+			vm.description = '';
 		}
-
-		function Delete(id){
-			alert("Deleting.." + id);
-			DataService.deleteTicket(id);
-
-			this.destroy();
-		}
-
-		// Factories
-		vm.StateChange = StateChange;
-		vm.dataService = DataService;
+		// factories
+		vm.stateChange = stateChange;
+		vm.dataService = dataService;
  
- 		// Functions
-		vm.ShowCreateTicketForm = ShowCreateTicketForm;
-		vm.CreateTicket = CreateTicket;
-		vm.UpdateTicket = UpdateTicket;
-		vm.Delete = Delete;
+ 		// functions
+		vm.showCreateTicketForm = showCreateTicketForm;
+		vm.createTicket = createTicket;
+		vm.updateTicket = updateTicket;
+		vm.deleteTicket = deleteTicket;
+		vm.editTicket = editTicket;
+		vm.closeEdit = closeEdit;
 
+		vm.id = '';
 		vm.title = '';
 		vm.description = '';
 
 	}
 
-})();
+
+	headerController.$inject = ['stateChange'];
+	app_controller.controller("headerController", headerController);
+
+	formController.$inject = ['loginService', 'stateChange'];
+	app_controller.controller("formController", formController);
+	
+	ticketController.$inject = ['dataService', 'stateChange'];
+	app_controller.controller("ticketController", ticketController);
+
+
+})(Swimlane);

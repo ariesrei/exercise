@@ -1,87 +1,86 @@
 'use strict';
 
-	var sampleData = [  
+(function(app_service){
+	
+	var statuses = [ "Planned" ,"Working", "Resolved", "Tested", "Completed"];
+
+	var tickets = [  
 		{
 			"id": '0',
 			"title": "#9820",
 			"description": "Dobidobido",
-			"status": "working"
+			"status": "Working"
 		},
 		{
 			"id": '1',
 			"title": "#2910",
 			"description": "Color me red",
-			"status":  "planned"
+			"status":  "Planned"
 		},
 		{	
 			"id": '2',
 			"title": "#2019",
 			"description": "Change background color",
-			"status":  "planned"
+			"status":  "Planned"
 		}
 	];
 
-	var dataStatus = [
-		{
-			"status": "planned"
-		},
-		{ 
-			"status":  "working"
-		},
-		{	
-			"status":  "resolved"
-		},
-		{	 
-			"status":  "tested"
-		},
-		{	
-			"status":  "completed"
-		}
-	];
-
-	angular
-		.module("app")
-		.service("DataService", DataService);
-
-	function DataService(){
+	function dataService(){
 
 		var dataObj = {
-			sampleData: sampleData,
-			dataStatus: dataStatus,
+			tickets: tickets,
+			statuses: statuses,
 			addTicket: addTicket,
 			updateTicket: updateTicket,
-			deleteTicket: deleteTicket
+			deleteTicket: deleteTicket,
+			editTicket: editTicket
 		}
 
-		var dataLength = sampleData.length;
-
+		var dataLength = tickets.length;
+ 
 	    function addTicket(title, description){
-	    	sampleData.push({
-	    		id: dataLength,
+	    	tickets.push({
+	    		id: String(dataLength++),
 		 		title: title,
 		 		description: description,
-		 		status: 'planned'
+		 		status: 'Planned'
 			});
-			//alert(sampleData);
+			//alert(JSON.stringify(tickets));
 	    }
 	    
 	    function updateTicket(id, status){
-			
-			for (var i in sampleData) {
-		     	if (sampleData[i].id == id) {
-			        sampleData[i].status = status;
+			for (var i in tickets) {
+		     	if (tickets[i].id === id) {			        	
+				    tickets[i].status = status;
 		     	}
 		   	}
-			alert(JSON.stringify(sampleData));
-			return sampleData;
+		    //alert(JSON.stringify(tickets));
 	    }
 
 	    function deleteTicket(id){
-		    sampleData.splice(id, 1);
-		   	alert(JSON.stringify(sampleData));
+	    	//var id_to_delete = id;
+    		for (var i in tickets) {
+		     	if (tickets[i].id === id) {	
+		     		//alert(JSON.stringify(tickets[i].id));    	
+				    delete tickets[i];
+		     	}
+		   	}
+		   	//alert(JSON.stringify(tickets));
 	    }
 
-      	
+	    function editTicket(id, title, description){
+	    	for (var i in tickets) {
+		     	if (tickets[i].id === id) {	
+		     		tickets[i].title = title;
+		     		tickets[i].description = description;
+		     	}
+		   	}
+	    }
+
       	return dataObj;
 
 	}
+
+	app_service.service("dataService", dataService);
+	
+})(Swimlane);

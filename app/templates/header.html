@@ -1,0 +1,17 @@
+<div ng-controller="headerController as headerCtrl"> 
+
+	<h1>Exercise: Test</h1>
+
+	<div class="pull-right">
+
+		<span class="pull-right" ng-if="headerCtrl.stateChange.welcome">Welcome Guest</span>
+
+		<button class="btn btn-logout" 
+				ng-if="headerCtrl.stateChange.logoutActive" 
+	 				ng-click="headerCtrl.showLogout()">
+		 					Logout
+		</button>
+
+	</div>
+
+</div>
